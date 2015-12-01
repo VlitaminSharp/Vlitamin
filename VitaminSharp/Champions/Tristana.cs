@@ -19,7 +19,7 @@ namespace VitaminSharp.Champions
             E = new Spell(SpellSlot.E, 703f);
             R = new Spell(SpellSlot.R, 703f);
 
-           // W.SetSkillshot(50.0f, 260.0f, 1400.0f, false, SkillshotType.SkillshotCircle);
+            W.SetSkillshot(50.0f, 260.0f, 1400.0f, false, SkillshotType.SkillshotCircle);
 
             Game.PrintChat("<font color = \"##00D8FF\"> [VlitaminSharp] " + name + " Made by kywooo </font> Korean ");
             Game.PrintChat("<font color = \"##00D8FF\"> [VlitaminSharp] " + name + " Good luck! </font>");
@@ -38,19 +38,19 @@ namespace VitaminSharp.Champions
             menu.AddSubMenu(TargetMenu);
 
 
-            menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboQ", "CUseQ", true).SetValue(true));
-            menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboW", "CUseW", true).SetValue(false));
-            menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboE", "CUseE", true).SetValue(true));
-            menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboR", "CUseR", true).SetValue(true));
+            menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboQ", "UseQ", true).SetValue(true));
+            menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboW", "UseW", true).SetValue(false));
+            menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboE", "UseE", true).SetValue(true));
+            menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboR", "UseR", true).SetValue(true));
 
-            menu.SubMenu(name).SubMenu("Harass").AddItem(new MenuItem("HarassQ", "HUseQ", true).SetValue(true));
-            menu.SubMenu(name).SubMenu("Harass").AddItem(new MenuItem("HarassE", "HUseE", true).SetValue(true));
+            menu.SubMenu(name).SubMenu("Harass").AddItem(new MenuItem("HarassQ", "UseQ", true).SetValue(true));
+            menu.SubMenu(name).SubMenu("Harass").AddItem(new MenuItem("HarassE", "UseE", true).SetValue(true));
 
-            menu.SubMenu(name).SubMenu("LaneClear").AddItem(new MenuItem("LaneClearQ", "LUseQ", true).SetValue(false));
-            menu.SubMenu(name).SubMenu("LaneClear").AddItem(new MenuItem("LaneClearE", "LUseE", true).SetValue(false));
+            menu.SubMenu(name).SubMenu("LaneClear").AddItem(new MenuItem("LaneClearQ", "UseQ", true).SetValue(false));
+            menu.SubMenu(name).SubMenu("LaneClear").AddItem(new MenuItem("LaneClearE", "UseE", true).SetValue(false));
 
-            menu.SubMenu(name).SubMenu("JungleClear").AddItem(new MenuItem("JungleClearQ", "JUseQ", true).SetValue(true));
-            menu.SubMenu(name).SubMenu("JungleClear").AddItem(new MenuItem("JungleClearE", "JUseE", true).SetValue(true));
+            menu.SubMenu(name).SubMenu("JungleClear").AddItem(new MenuItem("JungleClearQ", "UseQ", true).SetValue(true));
+            menu.SubMenu(name).SubMenu("JungleClear").AddItem(new MenuItem("JungleClearE", "UseE", true).SetValue(true));
 
             menu.SubMenu(name).SubMenu("Creadits : kywooo");
 
