@@ -28,19 +28,19 @@ namespace VitaminSharp.Champions
 
         public override void OnMenu()
         {
-            menu.AddItem(new MenuItem("ComboQ", "CUseQ", true).SetValue(true));
-            menu.AddItem(new MenuItem("ComboW", "CUseW", true).SetValue(false));
-            menu.AddItem(new MenuItem("ComboE", "CUseE", true).SetValue(true));
-            menu.AddItem(new MenuItem("ComboR", "CUseR", true).SetValue(true));
+            menu.SubMenu("Test").AddItem(new MenuItem("ComboQ", "CUseQ", true).SetValue(true));
+            menu.SubMenu("Test").AddItem(new MenuItem("ComboW", "CUseW", true).SetValue(false));
+            menu.SubMenu("Test").AddItem(new MenuItem("ComboE", "CUseE", true).SetValue(true));
+            menu.SubMenu("Test").AddItem(new MenuItem("ComboR", "CUseR", true).SetValue(true));
 
-            menu.AddItem(new MenuItem("HarassQ", "HUseQ", true).SetValue(true));
-            menu.AddItem(new MenuItem("HarassE", "HUseE", true).SetValue(true));
+            menu.SubMenu("Test").AddItem(new MenuItem("HarassQ", "HUseQ", true).SetValue(true));
+            menu.SubMenu("Test").AddItem(new MenuItem("HarassE", "HUseE", true).SetValue(true));
 
-            menu.AddItem(new MenuItem("LaneClearQ", "LUseQ", true).SetValue(false));
-            menu.AddItem(new MenuItem("LaneClearE", "LUseE", true).SetValue(false));
+            menu.SubMenu("Test").AddItem(new MenuItem("LaneClearQ", "LUseQ", true).SetValue(false));
+            menu.SubMenu("Test").AddItem(new MenuItem("LaneClearE", "LUseE", true).SetValue(false));
 
-            menu.AddItem(new MenuItem("JugleClearQ", "JUseQ", true).SetValue(false));
-            menu.AddItem(new MenuItem("JugleClearE", "JUseE", true).SetValue(false));
+            menu.SubMenu("Test").AddItem(new MenuItem("JugleClearQ", "JUseQ", true).SetValue(false));
+            menu.SubMenu("Test").AddItem(new MenuItem("JugleClearE", "JUseE", true).SetValue(false));
             menu.AddToMainMenu();
         }
 
