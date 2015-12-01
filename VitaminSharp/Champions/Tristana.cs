@@ -47,7 +47,11 @@ namespace VitaminSharp.Champions
 
         public override void OnUpdate()
         {
+            Menu tsMenu = menu.AddSubMenu(new Menu("TargetSelector", "TS"));
+            TargetSelector.AddToMenu(tsMenu);
 
+            Menu movingMenu = menu.AddSubMenu(new Menu("OrbWalker","OrbWalker"));
+            moving = new Orbwalking.Orbwalker(movingMenu);
         }
 
         public override void OnDraw()
