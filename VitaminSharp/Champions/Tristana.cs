@@ -29,7 +29,7 @@ namespace VitaminSharp.Champions
 
         public override void OnMenu()
         {
-            Menu movingMenu = menu.AddSubMenu(new Menu("OrbWalker", "OrbWalker"));
+            var movingMenu = menu.AddSubMenu(new Menu("OrbWalker", "orbWalker"));
             moving = new Orbwalking.Orbwalker(movingMenu);
             menu.AddSubMenu(movingMenu);
 
@@ -47,6 +47,7 @@ namespace VitaminSharp.Champions
             menu.SubMenu(name).SubMenu("JungleClear").AddItem(new MenuItem("JungleClearQ", "JUseQ", true).SetValue(true));
             menu.SubMenu(name).SubMenu("JungleClear").AddItem(new MenuItem("JungleClearE", "JUseE", true).SetValue(true));
 
+            menu.SubMenu(name).SubMenu("Creadits : kywooo");
 
 
             menu.AddToMainMenu();
