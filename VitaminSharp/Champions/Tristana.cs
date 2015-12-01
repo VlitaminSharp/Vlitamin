@@ -22,7 +22,7 @@ namespace VitaminSharp.Champions
             W.SetSkillshot(50.0f, 260.0f, 1400.0f, false, SkillshotType.SkillshotCircle);
 
             Game.PrintChat("<font color = \"##00D8FF\"> [VlitaminSharp] Tristana Init </font> Korean ");
-
+            Init();
             OnMenu();
         }
 
