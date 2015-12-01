@@ -21,7 +21,8 @@ namespace VitaminSharp.Champions
 
             W.SetSkillshot(50.0f, 260.0f, 1400.0f, false, SkillshotType.SkillshotCircle);
 
-            Game.PrintChat("<font color = \"##00D8FF\"> [VlitaminSharp] " + name + " Init </font> Korean ");
+            Game.PrintChat("<font color = \"##00D8FF\"> [VlitaminSharp] " + name + " Made by kywooo </font> Korean ");
+            Game.PrintChat("<font color = \"##00D8FF\"> [VlitaminSharp] " + name + " Good luck! </font>");
             Init();
             OnMenu();
         }
@@ -39,15 +40,15 @@ namespace VitaminSharp.Champions
             menu.SubMenu(name).SubMenu("LaneClear").AddItem(new MenuItem("LaneClearQ", "LUseQ", true).SetValue(false));
             menu.SubMenu(name).SubMenu("LaneClear").AddItem(new MenuItem("LaneClearE", "LUseE", true).SetValue(false));
 
-            menu.SubMenu(name).SubMenu("Jugle").AddItem(new MenuItem("JugleClearQ", "JUseQ", true).SetValue(false));
-            menu.SubMenu(name).SubMenu("Jugle").AddItem(new MenuItem("JugleClearE", "JUseE", true).SetValue(false));
+            menu.SubMenu(name).SubMenu("JungleClear").AddItem(new MenuItem("JungleClearQ", "JUseQ", true).SetValue(true));
+            menu.SubMenu(name).SubMenu("JungleClear").AddItem(new MenuItem("JungleClearE", "JUseE", true).SetValue(true));
             
             menu.AddToMainMenu();
         }
 
         public override void OnUpdate()
         {
-            Menu tsMenu = menu.AddSubMenu(new Menu("TargetSelector", "TS"));
+            Menu tsMenu = menu.AddSubMenu(new Menu("TargetSelector", "TargetSelector"));
             TargetSelector.AddToMenu(tsMenu);
             tsMenu.AddToMainMenu();
 

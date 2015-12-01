@@ -69,11 +69,13 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LeagueSharp">
-      <HintPath>C:\Users\User-Kim\Desktop\LeagueSharp\System\LeagueSharp.dll</HintPath>
+    <Reference Include="LeagueSharp, Version=1.0.0.25, Culture=neutral, PublicKeyToken=a41ba14f653257a6, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\LeagueSharp\System\LeagueSharp.dll</HintPath>
     </Reference>
-    <Reference Include="LeagueSharp.Common">
-      <HintPath>C:\Users\User-Kim\Desktop\LeagueSharp\System\LeagueSharp.Common.dll</HintPath>
+    <Reference Include="LeagueSharp.Common, Version=1.0.0.46, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\LeagueSharp\System\LeagueSharp.Common.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX">
       <HintPath>C:\Users\User-Kim\Desktop\LeagueSharp\System\SharpDX.dll</HintPath>
