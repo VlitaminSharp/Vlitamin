@@ -33,6 +33,11 @@ namespace VitaminSharp.Champions
             moving = new Orbwalking.Orbwalker(movingMenu);
             menu.AddSubMenu(movingMenu);
 
+            var TargetMenu = new Menu("TargetSelector", "targetselector", true);
+            TargetSelector.AddToMenu(TargetMenu);
+            menu.AddSubMenu(TargetMenu);
+
+
             menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboQ", "CUseQ", true).SetValue(true));
             menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboW", "CUseW", true).SetValue(false));
             menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboE", "CUseE", true).SetValue(true));
