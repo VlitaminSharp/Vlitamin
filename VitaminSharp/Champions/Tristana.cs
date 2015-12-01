@@ -19,7 +19,7 @@ namespace VitaminSharp.Champions
             E = new Spell(SpellSlot.E, 703f);
             R = new Spell(SpellSlot.R, 703f);
 
-            W.SetSkillshot(50.0f, 260.0f, 1400.0f, false, SkillshotType.SkillshotCircle);
+           // W.SetSkillshot(50.0f, 260.0f, 1400.0f, false, SkillshotType.SkillshotCircle);
 
             Game.PrintChat("<font color = \"##00D8FF\"> [VlitaminSharp] " + name + " Made by kywooo </font> Korean ");
             Game.PrintChat("<font color = \"##00D8FF\"> [VlitaminSharp] " + name + " Good luck! </font>");
