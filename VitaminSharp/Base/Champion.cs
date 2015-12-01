@@ -14,13 +14,13 @@ namespace VitaminSharp.Base
         protected Orbwalking.Orbwalker moving;
         protected Menu menu;
 
-        protected virtual void OnCombo();
-        protected virtual void OnHarass();
-        protected virtual void OnLaneClear();
-        protected virtual void OnLastHit();
+        protected virtual void OnCombo() { }
+        protected virtual void OnHarass() { }
+        protected virtual void OnLaneClear() { }
+        protected virtual void OnLastHit() { }
 
         public virtual void OnLoad(EventArgs args) { }
-        public virtual void OnMenu(Menu mainMenu) { }
+        public virtual void OnMenu() { }
         public virtual void OnUpdate() { }
         public virtual void OnDraw() { }
 
