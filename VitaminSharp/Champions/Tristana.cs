@@ -78,18 +78,28 @@ namespace VitaminSharp.Champions
                 return;
             }
 
+            if(Q.IsReady() && UseQ)
+            {
+                Q.Cast();
+            }
+
         }
 
-        protected override void OnHarass()
+        protected override void OnHarass(bool UseQ, bool UseE)
         {
-
+            if (Q.IsReady() && UseQ)
+            {
+                Q.Cast();
+            }
         }
 
         protected override void OnLaneClear(bool UseQ, bool UseE)
         {
+            
+
             if(Q.IsReady() && UseQ)
             {
-                Q.Cast(true);
+                Q.Cast();
             }
         }
 
