@@ -42,15 +42,17 @@ namespace VitaminSharp.Champions
 
             menu.SubMenu(name).SubMenu("JungleClear").AddItem(new MenuItem("JungleClearQ", "JUseQ", true).SetValue(true));
             menu.SubMenu(name).SubMenu("JungleClear").AddItem(new MenuItem("JungleClearE", "JUseE", true).SetValue(true));
-            
+
+            Menu movingMenu = menu.AddSubMenu(new Menu("OrbWalker", "OrbWalker"));
+            moving = new Orbwalking.Orbwalker(movingMenu);
+            menu.AddSubMenu(movingMenu);
+
             menu.AddToMainMenu();
         }
 
         public override void OnUpdate()
         {
-            Menu movingMenu = menu.AddSubMenu(new Menu("OrbWalker","OrbWalker"));
-            moving = new Orbwalking.Orbwalker(movingMenu);
-            menu.AddSubMenu(movingMenu);
+
         }
 
         public override void OnDraw()
