@@ -18,9 +18,9 @@ namespace VitaminSharp
         {
             Champion tris = new Champion();
 
-            switch(ObjectManager.Player.ChampionName)
+            switch(ObjectManager.Player.ChampionName.ToLowerInvariant())
             {
-                case "Tristana":
+                case "tristana":
                     tris = new Tristana();
                     break;
             }
