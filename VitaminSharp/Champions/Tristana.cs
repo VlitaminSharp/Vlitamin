@@ -21,26 +21,27 @@ namespace VitaminSharp.Champions
 
             W.SetSkillshot(50.0f, 260.0f, 1400.0f, false, SkillshotType.SkillshotCircle);
 
-            Game.PrintChat("<font color = \"##00D8FF\"> [VlitaminSharp] Tristana Init </font> Korean ");
+            Game.PrintChat("<font color = \"##00D8FF\"> [VlitaminSharp] " + name + " Init </font> Korean ");
             Init();
             OnMenu();
         }
 
         public override void OnMenu()
         {
-            menu.SubMenu("Test").AddItem(new MenuItem("ComboQ", "CUseQ", true).SetValue(true));
-            menu.SubMenu("Test").AddItem(new MenuItem("ComboW", "CUseW", true).SetValue(false));
-            menu.SubMenu("Test").AddItem(new MenuItem("ComboE", "CUseE", true).SetValue(true));
-            menu.SubMenu("Test").AddItem(new MenuItem("ComboR", "CUseR", true).SetValue(true));
+            menu.SubMenu(name).AddItem(new MenuItem("ComboQ", "CUseQ", true).SetValue(true));
+            menu.SubMenu(name).AddItem(new MenuItem("ComboW", "CUseW", true).SetValue(false));
+            menu.SubMenu(name).AddItem(new MenuItem("ComboE", "CUseE", true).SetValue(true));
+            menu.SubMenu(name).AddItem(new MenuItem("ComboR", "CUseR", true).SetValue(true));
 
-            menu.SubMenu("Test").AddItem(new MenuItem("HarassQ", "HUseQ", true).SetValue(true));
-            menu.SubMenu("Test").AddItem(new MenuItem("HarassE", "HUseE", true).SetValue(true));
+            menu.SubMenu(name).AddItem(new MenuItem("HarassQ", "HUseQ", true).SetValue(true));
+            menu.SubMenu(name).AddItem(new MenuItem("HarassE", "HUseE", true).SetValue(true));
 
-            menu.SubMenu("Test").AddItem(new MenuItem("LaneClearQ", "LUseQ", true).SetValue(false));
-            menu.SubMenu("Test").AddItem(new MenuItem("LaneClearE", "LUseE", true).SetValue(false));
+            menu.SubMenu(name).AddItem(new MenuItem("LaneClearQ", "LUseQ", true).SetValue(false));
+            menu.SubMenu(name).AddItem(new MenuItem("LaneClearE", "LUseE", true).SetValue(false));
 
-            menu.SubMenu("Test").AddItem(new MenuItem("JugleClearQ", "JUseQ", true).SetValue(false));
-            menu.SubMenu("Test").AddItem(new MenuItem("JugleClearE", "JUseE", true).SetValue(false));
+            menu.SubMenu(name).AddItem(new MenuItem("JugleClearQ", "JUseQ", true).SetValue(false));
+            menu.SubMenu(name).AddItem(new MenuItem("JugleClearE", "JUseE", true).SetValue(false));
+            
             menu.AddToMainMenu();
         }
 

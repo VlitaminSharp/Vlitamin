@@ -16,7 +16,7 @@ namespace VitaminSharp
     {
         static void Main(string[] args)
         {
-            Tristana tris = new Tristana();
+            Champion tris = new Tristana();
             CustomEvents.Game.OnGameLoad += tris.OnLoad;
         }
     }

@@ -26,7 +26,7 @@ namespace VitaminSharp.Base
 
         public void Init()
         {
-            menu = new Menu(name, name, true);
+            menu = new Menu("VitaminSharp", "Vitamin", true);
             Game.OnUpdate += Update;
             Drawing.OnDraw += Draw;
         }
