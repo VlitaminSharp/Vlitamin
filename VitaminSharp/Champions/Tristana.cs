@@ -28,19 +28,19 @@ namespace VitaminSharp.Champions
 
         public override void OnMenu()
         {
-            menu.SubMenu(name).AddItem(new MenuItem("ComboQ", "CUseQ", true).SetValue(true));
-            menu.SubMenu(name).AddItem(new MenuItem("ComboW", "CUseW", true).SetValue(false));
-            menu.SubMenu(name).AddItem(new MenuItem("ComboE", "CUseE", true).SetValue(true));
-            menu.SubMenu(name).AddItem(new MenuItem("ComboR", "CUseR", true).SetValue(true));
+            menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboQ", "CUseQ", true).SetValue(true));
+            menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboW", "CUseW", true).SetValue(false));
+            menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboE", "CUseE", true).SetValue(true));
+            menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboR", "CUseR", true).SetValue(true));
 
-            menu.SubMenu(name).AddItem(new MenuItem("HarassQ", "HUseQ", true).SetValue(true));
-            menu.SubMenu(name).AddItem(new MenuItem("HarassE", "HUseE", true).SetValue(true));
+            menu.SubMenu(name).SubMenu("Harass").AddItem(new MenuItem("HarassQ", "HUseQ", true).SetValue(true));
+            menu.SubMenu(name).SubMenu("Harass").AddItem(new MenuItem("HarassE", "HUseE", true).SetValue(true));
 
-            menu.SubMenu(name).AddItem(new MenuItem("LaneClearQ", "LUseQ", true).SetValue(false));
-            menu.SubMenu(name).AddItem(new MenuItem("LaneClearE", "LUseE", true).SetValue(false));
+            menu.SubMenu(name).SubMenu("LaneClear").AddItem(new MenuItem("LaneClearQ", "LUseQ", true).SetValue(false));
+            menu.SubMenu(name).SubMenu("LaneClear").AddItem(new MenuItem("LaneClearE", "LUseE", true).SetValue(false));
 
-            menu.SubMenu(name).AddItem(new MenuItem("JugleClearQ", "JUseQ", true).SetValue(false));
-            menu.SubMenu(name).AddItem(new MenuItem("JugleClearE", "JUseE", true).SetValue(false));
+            menu.SubMenu(name).SubMenu("Jugle").AddItem(new MenuItem("JugleClearQ", "JUseQ", true).SetValue(false));
+            menu.SubMenu(name).SubMenu("Jugle").AddItem(new MenuItem("JugleClearE", "JUseE", true).SetValue(false));
             
             menu.AddToMainMenu();
         }
