@@ -69,8 +69,14 @@ namespace VitaminSharp.Champions
         }
 
         #region Events
-        protected override void OnCombo()
+        protected override void OnCombo(bool UseQ, bool UseW, bool UseE, bool UseR)
         {
+            var targeting = TargetSelector.GetTarget(E.Range, TargetSelector.DamageType.Physical);
+
+            if(targeting == null || targeting.IsValidTarget())
+            {
+                return;
+            }
 
         }
 
@@ -79,9 +85,12 @@ namespace VitaminSharp.Champions
 
         }
 
-        protected override void OnLaneClear()
+        protected override void OnLaneClear(bool UseQ, bool UseE)
         {
-
+            if(Q.IsReady() && UseQ)
+            {
+                Q.Cast(true);
+            }
         }
 
         protected override void OnLastHit()
