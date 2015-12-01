@@ -6,23 +6,41 @@ using System.Linq;
 
 namespace VitaminSharp.Base
 {
-    public abstract class Champion
+    public class Champion
     {
         protected string name;
         protected Obj_AI_Hero hero { get { return ObjectManager.Player; } }
         protected Spell Q, W, E, R;
-        protected Orbwalking.Orbwalker orbWalker;
+        protected Orbwalking.Orbwalker moving;
         protected Menu menu;
 
-        public abstract void OnLoad(EventArgs args);
-        public void Init(string displayName, string name, bool rootMenu)
+        protected virtual void OnCombo();
+        protected virtual void OnHarass();
+        protected virtual void OnLaneClear();
+        protected virtual void OnLastHit();
+
+        public virtual void OnLoad(EventArgs args) { }
+        public virtual void OnMenu(Menu mainMenu) { }
+        public virtual void OnUpdate() { }
+        public virtual void OnDraw() { }
+
+        public void Init()
         {
-            menu = new Menu(displayName, name, rootMenu);
+            menu = new Menu(name, name, true);
             Game.OnUpdate += Update;
+            Drawing.OnDraw += Draw;
         }
 
-        public abstract void OnMenu();
-        public abstract void OnDrawArage(EventArgs args);
+        public void Draw(EventArgs args)
+        {
+            if (hero.IsDead)
+            {
+                return;
+            }
+
+            OnDraw();
+        }
+
         public void Update(EventArgs args)
         {
             if (hero.IsDead)
@@ -30,14 +48,14 @@ namespace VitaminSharp.Base
                 return;
             }
 
-            switch (orbWalker.ActiveMode)
+            switch(moving.ActiveMode)
             {
                 case Orbwalking.OrbwalkingMode.Combo:
                     OnCombo();
                     break;
 
                 case Orbwalking.OrbwalkingMode.Mixed:
-                    OnMixed();
+                    OnHarass();
                     break;
 
                 case Orbwalking.OrbwalkingMode.LaneClear:
@@ -48,11 +66,8 @@ namespace VitaminSharp.Base
                     OnLastHit();
                     break;
             }
-        }
 
-        protected abstract void OnLastHit();
-        protected abstract void OnMixed();
-        protected abstract void OnLaneClear();
-        protected abstract void OnCombo();
+            OnUpdate();
+        }
     }
 }

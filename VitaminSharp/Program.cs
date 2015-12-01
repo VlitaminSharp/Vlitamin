@@ -8,6 +8,7 @@ using LeagueSharp;
 using LeagueSharp.Common;
 using SharpDX;
 using VitaminSharp.Base;
+using VitaminSharp.Champions;
 
 namespace VitaminSharp
 {
@@ -15,7 +16,8 @@ namespace VitaminSharp
     {
         static void Main(string[] args)
         {
-
+            Tristana tris = new Tristana();
+            CustomEvents.Game.OnGameLoad += tris.OnLoad;
         }
     }
 }
