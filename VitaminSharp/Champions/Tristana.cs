@@ -31,11 +31,11 @@ namespace VitaminSharp.Champions
         {
             var movingMenu = new Menu("OrbWalker", "orbWalker", true);
             moving = new Orbwalking.Orbwalker(movingMenu);
-            menu.AddSubMenu(movingMenu);
+            //menu.AddSubMenu(movingMenu);
 
             var TargetMenu = new Menu("TargetSelector", "targetselector", true);
             TargetSelector.AddToMenu(TargetMenu);
-            menu.AddSubMenu(TargetMenu);
+            //menu.AddSubMenu(TargetMenu);
 
             menu.AddToMainMenu();
 
