@@ -25,6 +25,7 @@ namespace VitaminSharp
                     break;
                 case "Azir":
                     champ = new Azir();
+                    break;
                     
             }
             CustomEvents.Game.OnGameLoad += champ.OnLoad;

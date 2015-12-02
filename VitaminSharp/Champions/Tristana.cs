@@ -62,7 +62,7 @@ namespace VitaminSharp.Champions
 
         }
 
-        public override void OnDraw()
+        public override void OnDraw(EventArgs args)
         {
 
         }
