@@ -17,7 +17,6 @@ namespace VitaminSharp.Base
         protected virtual void OnCombo() { }
         protected virtual void OnHarass() { }
         protected virtual void OnLaneClear() { }
-        protected virtual void OnLastHit() { }
 
         public virtual void OnLoad(EventArgs args) { }
         public virtual void OnMenu() { }
@@ -60,10 +59,6 @@ namespace VitaminSharp.Base
 
                 case Orbwalking.OrbwalkingMode.LaneClear:
                     OnLaneClear();
-                    break;
-
-                case Orbwalking.OrbwalkingMode.LastHit:
-                    OnLastHit();
                     break;
             }
 
