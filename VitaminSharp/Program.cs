@@ -23,9 +23,6 @@ namespace VitaminSharp
                 case "tristana":
                     champ = new Tristana();
                     break;
-                case "Azir":
-                    champ = new Azir();
-                    break;
                     
             }
             CustomEvents.Game.OnGameLoad += champ.OnLoad;

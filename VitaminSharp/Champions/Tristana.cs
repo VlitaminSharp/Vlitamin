@@ -62,37 +62,23 @@ namespace VitaminSharp.Champions
 
         }
 
-        public override void OnDraw(EventArgs args)
+        public override void OnDraw()
         {
 
         }
 
         #region Events
-        protected override void OnCombo(bool UseQ, bool UseW, bool UseE, bool UseR)
+        protected override void OnCombo()
         {
-            var targeting = TargetSelector.GetTarget(E.Range, TargetSelector.DamageType.Physical);
-
-            if(targeting == null || targeting.IsValidTarget())
-            {
-                return;
-            }
-
-            if(Q.IsReady() && UseQ)
-            {
-                Q.Cast();
-            }
 
         }
 
-        protected override void OnHarass(bool UseQ, bool UseE)
+        protected override void OnHarass()
         {
-            if (Q.IsReady() && UseQ)
-            {
-                Q.Cast();
-            }
+
         }
 
-        protected override void OnLaneClear(bool UseQ, bool UseE)
+        protected override void OnLaneClear()
         {
 
         }
