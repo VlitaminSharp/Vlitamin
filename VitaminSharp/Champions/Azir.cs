@@ -70,7 +70,6 @@ namespace VitaminSharp.Champions
 
         }
 
-        #region Events
         protected override void OnCombo()
         {
 
