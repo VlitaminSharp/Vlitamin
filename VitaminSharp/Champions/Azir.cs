@@ -7,24 +7,26 @@ using VitaminSharp.Base;
 
 namespace VitaminSharp.Champions
 {
-    class Tristana
+    class Azir
         :Champion
     {
         public override void OnLoad(EventArgs args)
         {
-            name = "Tristana";
+            name = "Azir";
 
-            Q = new Spell(SpellSlot.Q, 703f);
-            W = new Spell(SpellSlot.W, 900f);
-            E = new Spell(SpellSlot.E, 703f);
-            R = new Spell(SpellSlot.R, 703f);
+            Q = new Spell(SpellSlot.Q, 810f);
+            W = new Spell(SpellSlot.W, 530f);
+            E = new Spell(SpellSlot.E, 1200f);
+            R = new Spell(SpellSlot.R, 260f);
 
-            W.SetSkillshot(50.0f, 260.0f, 1400.0f, false, SkillshotType.SkillshotCircle);
+
 
             Game.PrintChat("<font color = \"##00D8FF\"> [VlitaminSharp] " + name + " Made by kywooo </font> Korean ");
             Game.PrintChat("<font color = \"##00D8FF\"> [VlitaminSharp] " + name + " Good luck! </font>");
+
             Init();
             OnMenu();
+
         }
 
         public override void OnMenu()
@@ -38,6 +40,7 @@ namespace VitaminSharp.Champions
             menu.SubMenu(name).SubMenu("Harass").AddItem(new MenuItem("HarassE", "UseE", true).SetValue(true));
 
             menu.SubMenu(name).SubMenu("LaneClear").AddItem(new MenuItem("LaneClearQ", "UseQ", true).SetValue(false));
+            menu.SubMenu(name).SubMenu("LaneClear").AddItem(new MenuItem("LaneClearW", "UseW", true).SetValue(false));
             menu.SubMenu(name).SubMenu("LaneClear").AddItem(new MenuItem("LaneClearE", "UseE", true).SetValue(false));
 
             menu.SubMenu(name).SubMenu("JungleClear").AddItem(new MenuItem("JungleClearQ", "UseQ", true).SetValue(true));
@@ -68,39 +71,15 @@ namespace VitaminSharp.Champions
         }
 
         #region Events
-        protected override void OnCombo(bool UseQ, bool UseW, bool UseE, bool UseR)
-        {
-            var targeting = TargetSelector.GetTarget(E.Range, TargetSelector.DamageType.Physical);
-
-            if(targeting == null || targeting.IsValidTarget())
-            {
-                return;
-            }
-
-            if(Q.IsReady() && UseQ)
-            {
-                Q.Cast();
-            }
-
-        }
-
-        protected override void OnHarass(bool UseQ, bool UseE)
-        {
-            if (Q.IsReady() && UseQ)
-            {
-                Q.Cast();
-            }
-        }
-
-        protected override void OnLaneClear(bool UseQ, bool UseE)
+        protected override void OnCombo()
         {
 
         }
 
-        protected override void OnLastHit()
+        protected override void OnHarass()
         {
-
+        
         }
-        #endregion
+
     }
 }

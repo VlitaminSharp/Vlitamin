@@ -16,15 +16,18 @@ namespace VitaminSharp
     {
         static void Main(string[] args)
         {
-            Champion tris = new Champion();
+            Champion champ = new Champion();
 
             switch(ObjectManager.Player.ChampionName.ToLowerInvariant())
             {
                 case "tristana":
-                    tris = new Tristana();
+                    champ = new Tristana();
                     break;
+                case "Azir":
+                    champ = new Azir();
+                    
             }
-            CustomEvents.Game.OnGameLoad += tris.OnLoad;
+            CustomEvents.Game.OnGameLoad += champ.OnLoad;
         }
     }
 }

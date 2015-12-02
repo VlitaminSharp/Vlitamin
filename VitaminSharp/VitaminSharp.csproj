@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\Champion.cs" />
+    <Compile Include="Champions\Azir.cs" />
     <Compile Include="Champions\Tristana.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
