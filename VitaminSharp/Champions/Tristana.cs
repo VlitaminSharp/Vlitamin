@@ -30,10 +30,10 @@ namespace VitaminSharp.Champions
         public override void OnMenu()
         {
             moving = new Orbwalking.Orbwalker(menu.SubMenu(name).AddSubMenu(
-                new Menu("Orbwalker", "Orbwalker")));
+                new Menu("Orbwalker", "Orbwalker",true)));
 
             TargetSelector.AddToMenu(menu.SubMenu(name).AddSubMenu(
-                new Menu("Target Selector", "Target Selector")));
+                new Menu("Target Selector", "Target Selector",true)));
 
             //var movingMenu = new Menu("OrbWalker", "orbWalker", true);
             //moving = new Orbwalking.Orbwalker(movingMenu);
@@ -75,7 +75,15 @@ namespace VitaminSharp.Champions
         #region Events
         protected override void OnCombo()
         {
-            
+            if (menu.SubMenu(name).SubMenu("Combo").Item("UseQ").IsActive() == true)
+            {
+                var Target = moving.GetTarget();
+
+                if(Q.IsReady() && Target != null && Target.IsEnemy)
+                {
+                    Q.Cast();
+                }
+            }
         }
 
         protected override void OnHarass()
@@ -85,7 +93,7 @@ namespace VitaminSharp.Champions
 
         protected override void OnLaneClear()
         {
-
+            if(menu.SubMenu(name).SubMenu("LaneClear").Item("UseQ").)
         }
         #endregion
     }
