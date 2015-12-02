@@ -93,7 +93,7 @@ namespace VitaminSharp.Champions
 
         protected override void OnLaneClear()
         {
-            if(menu.SubMenu(name).SubMenu("LaneClear").Item("UseQ").)
+            //if(menu.SubMenu(name).SubMenu("LaneClear").Item("UseQ").)
         }
         #endregion
     }
