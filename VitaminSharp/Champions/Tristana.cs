@@ -87,11 +87,6 @@ namespace VitaminSharp.Champions
         {
 
         }
-
-        protected override void OnLastHit()
-        {
-
-        }
         #endregion
     }
 }
