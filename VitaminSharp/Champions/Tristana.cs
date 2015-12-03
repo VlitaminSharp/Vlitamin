@@ -23,18 +23,19 @@ namespace VitaminSharp.Champions
 
             Game.PrintChat("<font color = \"##00D8FF\"> [VlitaminSharp] " + name + " Made by kywooo </font> Korean ");
             Game.PrintChat("<font color = \"##00D8FF\"> [VlitaminSharp] " + name + " Good luck! </font>");
+
+            moving = new Orbwalking.Orbwalker(menu.SubMenu(name).AddSubMenu(
+                new Menu("Orbwalker", "Orbwalker", true)));
+
+            TargetSelector.AddToMenu(menu.SubMenu(name).AddSubMenu(
+                new Menu("Target Selector", "Target Selector", true)));
+
             Init();
             OnMenu();
         }
 
         public override void OnMenu()
         {
-            moving = new Orbwalking.Orbwalker(menu.SubMenu(name).AddSubMenu(
-                new Menu("Orbwalker", "Orbwalker",true)));
-
-            TargetSelector.AddToMenu(menu.SubMenu(name).AddSubMenu(
-                new Menu("Target Selector", "Target Selector",true)));
-
             //var movingMenu = new Menu("OrbWalker", "orbWalker", true);
             //moving = new Orbwalking.Orbwalker(movingMenu);
             //menu.AddSubMenu(movingMenu);
