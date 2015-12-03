@@ -78,25 +78,82 @@ namespace VitaminSharp.Champions
         }
 
         #region Events
-        protected override void OnCombo(bool q, bool w, bool e, bool r)
+        protected override void OnCombo()
         {
-                menu.Item("UseQ").GetValue<bool>();
-                menu.Item("UseW").GetValue<bool>();
-                menu.Item("UseE").GetValue<bool>();
-                menu.Item("UseR").GetValue<bool>();
+            var Targets = TargetSelector.GetTarget(Q.Range, TargetSelector.DamageType.Physical);
+
+            var Target_E = moving.GetTarget();
+
+            //var Target_R = moving.GetTarget();
+
+            if(Targets == null || !Targets.IsValidTarget())
+            {
+                return;
+            }
+
+            if(menu.Item("ComboQ",true).GetValue<bool>())
+            {
+                if(Q.IsReady() && Targets.IsValidTarget(Q.Range))
+                {
+                    Q.Cast();
+                }
+            }
+            
+            if(menu.Item("ComboE",true).GetValue<bool>())
+            {
+                if(E.IsReady() && Target_E != null || Targets.IsValidTarget(E.Range))
+                {
+                    E.Cast();
+                }
+            }
+            /// <summary>
+            /// 궁,w 스스로 쓰자(실력이 딸려서 못짜겠다.)
+            /// </summary>
 
         }
 
-        protected override void OnHarass(bool q, bool e)
+        protected override void OnHarass()
         {
-                menu.Item("UseQ").GetValue<bool>();
-                menu.Item("UseE").GetValue<bool>();
+            var Targets = TargetSelector.GetTarget(Q.Range, TargetSelector.DamageType.Physical);
+
+            var Target_E = moving.GetTarget();
+
+            if(menu.Item("HarassQ",true).GetValue<bool>())
+            {
+                if(Q.IsReady() && Targets.IsValidTarget(Q.Range))
+                {
+                    Q.Cast();
+                }
+            }
+
+            if(menu.Item("HarassE",true).GetValue<bool>())
+            {
+                if(E.IsReady() && Targets.IsValidTarget(E.Range))
+                {
+                    E.Cast((Obj_AI_Hero)Target_E);
+                }
+            }
         }
 
-        protected override void OnLaneClear(bool q, bool e)
+        protected override void OnLaneClear()
         {
-                menu.Item("UseQ").GetValue<bool>();
-                menu.Item("UseE").GetValue<bool>();
+
+        }
+
+        protected override void OnJungleClear()
+        {
+            var Monster = MinionManager.GetMinions(hero.ServerPosition, Orbwalking.GetRealAutoAttackRange(hero),
+                MinionTypes.All, MinionTeam.Neutral, MinionOrderTypes.MaxHealth);
+
+            if(Q.IsReady() && menu.Item("JungleClearQ",true).GetValue<bool>())
+            {
+                Q.Cast();
+            }
+
+            if(E.IsReady() && menu.Item("JungleClearE",true).GetValue<bool>())
+            {
+                E.Cast();
+            }
         }
         #endregion
     }

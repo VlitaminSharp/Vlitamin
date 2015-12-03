@@ -14,9 +14,10 @@ namespace VitaminSharp.Base
         protected Orbwalking.Orbwalker moving;
         protected Menu menu;
 
-        protected virtual void OnCombo(bool q, bool w, bool e, bool r) { }
-        protected virtual void OnHarass(bool q, bool e) { }
-        protected virtual void OnLaneClear(bool q, bool e) { }
+        protected virtual void OnCombo() { }
+        protected virtual void OnHarass() { }
+        protected virtual void OnLaneClear() { }
+        protected virtual void OnJungleClear() { }
 
         public virtual void OnLoad(EventArgs args) { }
         public virtual void OnMenu() { }
@@ -49,6 +50,7 @@ namespace VitaminSharp.Base
 
             switch(moving.ActiveMode)
             {
+
                 case Orbwalking.OrbwalkingMode.Combo:
                     OnCombo();
                     break;
@@ -59,25 +61,16 @@ namespace VitaminSharp.Base
 
                 case Orbwalking.OrbwalkingMode.LaneClear:
                     OnLaneClear();
+                    OnJungleClear();
                     break;
             }
 
             OnUpdate();
         }
 
-        private void OnLaneClear()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void OnHarass()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void OnCombo()
-        {
-            throw new NotImplementedException();
-        }
+        //private void OnLaneClear() { }
+        //private void OnHarass() { }
+        //private void OnCombo() { }
+        //private void OnJungleClear() { }
     }
 }
