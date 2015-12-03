@@ -36,13 +36,16 @@ namespace VitaminSharp.Champions
 
         public override void OnMenu()
         {
-            var movingMenu = new Menu("OrbWalker", "orbWalker", true);
-            moving = new Orbwalking.Orbwalker(movingMenu);
+            //var movingMenu = new Menu("OrbWalker", "orbWalker", true);
+            //moving = new Orbwalking.Orbwalker(movingMenu);
             //menu.AddSubMenu(movingMenu);
 
-            var TargetMenu = new Menu("TargetSelector", "targetselector", true);
-            TargetSelector.AddToMenu(TargetMenu);
+            //var TargetMenu = new Menu("TargetSelector", "targetselector", true);
+            //TargetSelector.AddToMenu(TargetMenu);
             //menu.AddSubMenu(TargetMenu);
+
+
+            menu.SubMenu("Orbwalk");
 
             menu.AddToMainMenu();
 
