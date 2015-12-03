@@ -75,23 +75,23 @@ namespace VitaminSharp.Champions
         #region Events
         protected override void OnCombo(bool q, bool w, bool e, bool r)
         {
-            OnCombo(menu.Item("UseQ").GetValue<bool>(),
-                menu.Item("UseW").GetValue<bool>(),
-                menu.Item("UseE").GetValue<bool>(),
-                menu.Item("UseR").GetValue<bool>());
+                menu.Item("UseQ").GetValue<bool>();
+                menu.Item("UseW").GetValue<bool>();
+                menu.Item("UseE").GetValue<bool>();
+                menu.Item("UseR").GetValue<bool>();
 
         }
 
         protected override void OnHarass(bool q, bool e)
         {
-            OnHarass(menu.Item("UseQ").GetValue<bool>(),
-                menu.Item("UseE").GetValue<bool>());
+                menu.Item("UseQ").GetValue<bool>();
+                menu.Item("UseE").GetValue<bool>();
         }
 
         protected override void OnLaneClear(bool q, bool e)
         {
-            OnLaneClear(menu.Item("UseQ").GetValue<bool>(),
-                menu.Item("UseE").GetValue<bool>());
+                menu.Item("UseQ").GetValue<bool>();
+                menu.Item("UseE").GetValue<bool>();
         }
         #endregion
     }
