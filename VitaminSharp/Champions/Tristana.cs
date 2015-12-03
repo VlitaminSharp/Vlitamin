@@ -24,11 +24,11 @@ namespace VitaminSharp.Champions
             Game.PrintChat("<font color = \"##00D8FF\"> [VlitaminSharp] " + name + " Made by kywooo </font> Korean ");
             Game.PrintChat("<font color = \"##00D8FF\"> [VlitaminSharp] " + name + " Good luck! </font>");
 
-            moving = new Orbwalking.Orbwalker(menu.SubMenu(name).AddSubMenu(
-                new Menu("Orbwalker", "Orbwalker", true)));
+            //moving = new Orbwalking.Orbwalker(menu.SubMenu(name).AddSubMenu(
+            //    new Menu("Orbwalker", "Orbwalker", true)));
 
-            TargetSelector.AddToMenu(menu.SubMenu(name).AddSubMenu(
-                new Menu("Target Selector", "Target Selector", true)));
+            //TargetSelector.AddToMenu(menu.SubMenu(name).AddSubMenu(
+            //    new Menu("Target Selector", "Target Selector", true)));
 
             Init();
             OnMenu();
@@ -36,13 +36,13 @@ namespace VitaminSharp.Champions
 
         public override void OnMenu()
         {
-            //var movingMenu = new Menu("OrbWalker", "orbWalker", true);
-            //moving = new Orbwalking.Orbwalker(movingMenu);
-            //menu.AddSubMenu(movingMenu);
+            var movingMenu = new Menu("OrbWalker", "orbWalker", true);
+            moving = new Orbwalking.Orbwalker(movingMenu);
+            menu.AddSubMenu(movingMenu);
 
-            //var TargetMenu = new Menu("TargetSelector", "targetselector", true);
-            //TargetSelector.AddToMenu(TargetMenu);
-            //menu.AddSubMenu(TargetMenu);
+            var TargetMenu = new Menu("TargetSelector", "targetselector", true);
+            TargetSelector.AddToMenu(TargetMenu);
+            menu.AddSubMenu(TargetMenu);
 
             menu.AddToMainMenu();
 
