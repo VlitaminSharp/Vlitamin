@@ -44,11 +44,6 @@ namespace VitaminSharp.Champions
             TargetSelector.AddToMenu(TargetMenu);
             menu.SubMenu(name).AddSubMenu(TargetMenu);
 
-
-            
-
-            menu.AddToMainMenu();
-
             menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboQ", "UseQ", true).SetValue(true));
             menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboW", "UseW", true).SetValue(false));
             menu.SubMenu(name).SubMenu("Combo").AddItem(new MenuItem("ComboE", "UseE", true).SetValue(true));
@@ -64,6 +59,8 @@ namespace VitaminSharp.Champions
             menu.SubMenu(name).SubMenu("JungleClear").AddItem(new MenuItem("JungleClearE", "UseE", true).SetValue(true));
 
             menu.SubMenu(name).SubMenu("Creadits : kywooo");
+
+            menu.AddToMainMenu();
         }
 
         public override void OnUpdate()
