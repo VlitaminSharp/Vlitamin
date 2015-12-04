@@ -109,6 +109,8 @@ namespace VitaminSharp.Champions
             /// <summary>
             /// 궁,w 스스로 쓰자(실력이 딸려서 못짜겠다.)
             /// </summary>
+            /// 
+            Game.PrintChat("OnCombo");
 
         }
 
