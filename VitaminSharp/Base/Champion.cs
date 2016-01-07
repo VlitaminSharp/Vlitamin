@@ -21,7 +21,7 @@ namespace VitaminSharp.Base
 
         public virtual void OnLoad(EventArgs args) { }
         public virtual void OnMenu() { }
-        public virtual void OnUpdate() { }
+        public virtual void     OnUpdate() { }
         public virtual void OnDraw() { }
 
         public void Init()
